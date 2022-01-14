@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file    ./BF.c
-  * @author  王彦斌
+  * @author  NGC13009(ngc1300@126.com)
   * @version V1.0
   * @date    2022年1月13日
   * @brief   Brain Fuck 图灵完备虚拟机
@@ -23,7 +23,7 @@
   * 
   * 关于 Brain Fuck : https://baike.baidu.com/item/Brainfuck/1152785
   *
-  * <h2><center>&copy; COPYRIGHT 2022 NWU/SIST</center></h2>
+  * <h2><center>Insert something here</center></h2>
   ******************************************************************************
   */
 
@@ -31,11 +31,11 @@
 
 //#define DEBUG //在为BF源码debug时使能
 
-#define PAPER_SIZE 128                   //纸带长度
+#define PAPER_SIZE 256                   //纸带长度
 #define VM_OUT(...) putchar(__VA_ARGS__) //BF图灵机的输出流
 #define VM_GET_IN() getchar()            //BF图灵机的输入流
 #define VM_PROGRAM argv[1]               //BF图灵机的程序
-#define STACK_SIZE 16                    //堆栈长度
+#define STACK_SIZE 32                    //堆栈长度
 
 #ifdef DEBUG
 #define VM_LOG(...) printf(__VA_ARGS__) //BF图灵机的日志输出流
