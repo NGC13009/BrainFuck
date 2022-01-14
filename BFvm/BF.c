@@ -45,15 +45,6 @@
 /////////////      移植与调试仅需修改上面的代码, 下面的不用动      /////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-#if (((PAPER_SIZE & PAPER_SIZE - 1) != 0) || (PAPER_SIZE < 8))
-#error PAPER_SIZE must be 2^n and large than 8, where n is Natural number
-#endif
-#if ((STACK_SIZE % 4 != 0) || (STACK_SIZE < 4))
-#error STACK_SIZE must be 4*n, where n is positive integer
-#endif
-
-#define HALF_PAPER_SIZE PAPER_SIZE / 2
-
 //需要输出某一个步骤时的内存时, 将这个函数(宏)放到那里
 //必须工作在DEBUG模式下
 #define PAPER_LOG()                                                              \
@@ -95,6 +86,17 @@
         VM_LOG("\n");                                                            \
     }                                                                            \
     VM_LOG("-------------------------------------------------------------\n");
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+#if (((PAPER_SIZE & PAPER_SIZE - 1) != 0) || (PAPER_SIZE < 8))
+#error PAPER_SIZE must be 2^n and large than 8, where n is Natural number
+#endif
+#if ((STACK_SIZE % 4 != 0) || (STACK_SIZE < 4))
+#error STACK_SIZE must be 4*n, where n is positive integer
+#endif
+
+#define HALF_PAPER_SIZE PAPER_SIZE / 2
 
 typedef char paper_typedef;
 
